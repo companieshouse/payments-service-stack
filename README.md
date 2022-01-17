@@ -1,2 +1,2 @@
 # payments-service-stack
-Infrastructure for the payments service
+Infrastructure for the Payments Service stack
