@@ -48,8 +48,7 @@
     {
         "environment": [
             { "name": "PORT", "value": "${pay_admin_proxy_port}" },
-            { "name": "LOGLEVEL", "value": "${log_level}" },
-            { "name": "API_URL", "value": "https://api${external_top_level_domain}" }
+            { "name": "LOGLEVEL", "value": "${log_level}" }
         ],
         "name": "${service_name}",
         "image": "${docker_registry}/${service_name}:${pay_admin_release_version}",
@@ -70,9 +69,7 @@
                 "awslogs-stream-prefix": "ecs"
             }
         },
-        "secrets": [
-            { "name": "PIWIK_URL", "valueFrom": "${payments.admin.web.ch.gov.uk-secret-piwik-url}" }
-        ],
+        "secrets": [],
         "volumesFrom": [],
         "essential": true
     }
