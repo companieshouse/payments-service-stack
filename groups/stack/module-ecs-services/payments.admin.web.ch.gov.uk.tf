@@ -3,14 +3,14 @@ locals {
   pay_admin_proxy_port = 11000 # local port number defined for proxy target of payments service sitting behind eric
 }
 
-resource "aws_ecs_service" "payments.admin.web.ch.gov.uk-ecs-service" {
+resource "aws_ecs_service" "payments-admin-web-ch-gov-uk-ecs-service" {
   name            = "${var.environment}-${local.service_name}"
   cluster         = var.ecs_cluster_id
-  task_definition = aws_ecs_task_definition.payments.admin.web.ch.gov.uk-task-definition.arn
+  task_definition = aws_ecs_task_definition.payments-admin-web-ch-gov-uk-task-definition.arn
   desired_count   = 1
-  depends_on      = [var.payments-admin-web-lb-arn]
+  depends_on      = [var.admin-web-lb-arn]
   load_balancer {
-    target_group_arn = aws_lb_target_group.payments.admin.web.ch.gov.uk-target_group.arn
+    target_group_arn = aws_lb_target_group.payments-admin-web-ch-gov-uk-target_group.arn
     container_port   = var.pay_admin_application_port
     container_name   = "eric" # [ALB -> target group -> eric -> payments admin] so eric container named here
   }
@@ -49,7 +49,7 @@ locals {
   )
 }
 
-resource "aws_ecs_task_definition" "payments.admin.web.ch.gov.uk-task-definition" {
+resource "aws_ecs_task_definition" "payments-admin-web-ch-gov-uk-task-definition" {
   family                = "${var.environment}-${local.service_name}"
   execution_role_arn    = var.task_execution_role_arn
   container_definitions = templatefile(
@@ -57,7 +57,7 @@ resource "aws_ecs_task_definition" "payments.admin.web.ch.gov.uk-task-definition
   )
 }
 
-resource "aws_lb_target_group" "payments.admin.web.ch.gov.uk-target_group" {
+resource "aws_lb_target_group" "payments-admin-web-ch-gov-uk-target_group" {
   name     = "${var.environment}-${local.service_name}"
   port     = var.pay_admin_application_port
   protocol = "HTTP"
@@ -74,12 +74,12 @@ resource "aws_lb_target_group" "payments.admin.web.ch.gov.uk-target_group" {
   }
 }
 
-resource "aws_lb_listener_rule" "payments.admin.web.ch.gov.uk" {
-  listener_arn = var.payments-admin-web-lb-listener-arn
+resource "aws_lb_listener_rule" "payments-admin-web-ch-gov-uk" {
+  listener_arn = var.admin-web-lb-listener-arn
   priority     = 1
   action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.payments.admin.web.ch.gov.uk-target_group.arn
+    target_group_arn = aws_lb_target_group.payments-admin-web-ch-gov-uk-target_group.arn
   }
   condition {
     field  = "path-pattern"
