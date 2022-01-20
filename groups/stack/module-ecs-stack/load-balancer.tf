@@ -1,12 +1,12 @@
-resource "aws_lb" "payments-admin-web-lb" {
+resource "aws_lb" "admin-web-lb" {
   name            = "${var.stack_name}-${var.environment}-lb"
   security_groups = [aws_security_group.internal-service-sg.id]
   subnets         = flatten([split(",", var.subnet_ids)])
-  internal        = var.payments_admin_lb_internal
+  internal        = var.admin_lb_internal
 }
 
-resource "aws_lb_listener" "payments-admin-web-lb-listener" {
-  load_balancer_arn = aws_lb.payments-admin-web-lb.arn
+resource "aws_lb_listener" "admin-web-lb-listener" {
+  load_balancer_arn = aws_lb.admin-web-lb.arn
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
@@ -21,14 +21,14 @@ resource "aws_lb_listener" "payments-admin-web-lb-listener" {
   }
 }
 
-resource "aws_route53_record" "payments.admin.web.ch.gov.uk-r53-record" {
+resource "aws_route53_record" "admin-web-r53-record" {
   count   = "${var.zone_id == "" ? 0 : 1}" # zone_id defaults to empty string giving count = 0 i.e. not route 53 record
   zone_id = var.zone_id
-  name    = "payments-admin-web${var.external_top_level_domain}"
+  name    = "admin-web${var.external_top_level_domain}"
   type    = "A"
   alias {
-    name                   = aws_lb.payments-admin-web-lb.dns_name
-    zone_id                = aws_lb.payments-admin-web-lb.zone_id
+    name                   = aws_lb.admin-web-lb.dns_name
+    zone_id                = aws_lb.admin-web-lb.zone_id
     evaluate_target_health = false
   }
 }

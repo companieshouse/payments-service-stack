@@ -81,22 +81,22 @@ data "vault_generic_secret" "secrets" {
 
 locals {
   # stack name is hardcoded here in main.tf for this stack. It should not be overridden per env
-  stack_name       = "payments-admin-web"
+  stack_name       = "payments-service"
   stack_fullname   = "${local.stack_name}-stack"
   name_prefix      = "${local.stack_name}-${var.environment}"
 
   public_lb_cidrs  = ["0.0.0.0/0"]
-  lb_subnet_ids    = "${var.payments_admin_lb_internal ? local.application_ids : local.public_ids}" # place ALB in correct subnets
-  lb_access_cidrs  = "${var.payments_admin_lb_internal ?
+  lb_subnet_ids    = "${var.admin_lb_internal ? local.application_ids : local.public_ids}" # place ALB in correct subnets
+  lb_access_cidrs  = "${var.admin_lb_internal ?
                       concat(local.internal_cidrs,local.vpn_cidrs,local.management_private_subnet_cidrs,split(",",local.application_cidrs)) :
                       local.public_lb_cidrs }"
-  app_access_cidrs = "${var.payments_admin_lb_internal ?
+  app_access_cidrs = "${var.admin_lb_internal ?
                       concat(local.internal_cidrs,local.vpn_cidrs,local.management_private_subnet_cidrs,split(",",local.application_cidrs)) :
                       concat(local.internal_cidrs,local.vpn_cidrs,local.management_private_subnet_cidrs,split(",",local.application_cidrs),split(",",local.public_cidrs)) }"
 }
 
 module "ecs-cluster" {
-  source = "git::git@github.com:companieshouse/terraform-library-ecs-cluster.git?ref=1.1.1"
+  source = "git::git@github.com:companieshouse/terraform-library-ecs-cluster.git?ref=1.1.3"
 
   stack_name                 = local.stack_name
   name_prefix                = local.name_prefix
@@ -134,7 +134,7 @@ module "ecs-stack" {
   internal_top_level_domain  = var.internal_top_level_domain
   subnet_ids                 = local.lb_subnet_ids
   web_access_cidrs           = local.lb_access_cidrs
-  payments_admin_lb_internal = var.payments_admin_lb_internal
+  admin_lb_internal = var.admin_lb_internal
 }
 
 module "ecs-services" {
@@ -142,8 +142,8 @@ module "ecs-services" {
 
   name_prefix               = local.name_prefix
   environment               = var.environment
-  payments-admin-web-lb-arn          = module.ecs-stack.payments-admin-web-lb-listener-arn
-  payments-admin-web-lb-listener-arn = module.ecs-stack.payments-admin-web-lb-listener-arn
+  admin-web-lb-arn          = module.ecs-stack.admin-web-lb-listener-arn
+  admin-web-lb-listener-arn = module.ecs-stack.admin-web-lb-listener-arn
   vpc_id                    = local.vpc_id
   subnet_ids                = local.application_ids
   web_access_cidrs          = local.app_access_cidrs
@@ -171,6 +171,6 @@ module "ecs-services" {
   eric_default_rate_limit_window = var.eric_default_rate_limit_window
 
   # payments.admin.web.ch.gov.uk variables
-  pay.admin_release_version       = var.pay.admin_release_version
-  pay.admin_application_port      = "10000"
+  pay_admin_release_version       = var.pay_admin_release_version
+  pay_admin_application_port      = "10000"
 }

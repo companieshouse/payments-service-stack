@@ -13,11 +13,11 @@ variable "vpc_id" {
   type        = string
   description = "The ID of the VPC for the target group and security group."
 }
-variable "payments-admin-web-lb-arn" {
+variable "admin-web-lb-arn" {
   type        = string
   description = "The ARN of the load balancer created in the ecs-stack module."
 }
-variable "payments-admin-web-lb-listener-arn" {
+variable "admin-web-lb-listener-arn" {
   type        = string
   description = "The ARN of the lb listener created in the ecs-stack module."
 }
@@ -86,7 +86,7 @@ variable "secrets_arn_map" {
 # eric
 variable "eric_version" {
   type        = string
-  description = "The version of the eric service/container to run as a reverse proxy in front of pay.admin service."
+  description = "The version of the eric service/container to run as a reverse proxy in front of pay_admin service."
 }
 variable "eric_cache_url" {
   type = string
@@ -117,11 +117,11 @@ variable "eric_default_rate_limit_window" {
 }
 
 # payments.admin.web.ch.gov.uk
-variable "pay.admin_release_version" {
+variable "pay_admin_release_version" {
   type        = string
   description = "The release version for the payments.admin.web.ch.gov.uk service."
 }
-variable "pay.admin_application_port" {
+variable "pay_admin_application_port" {
   type        = string
   description = "The port number for the payments.admin.web.ch.gov.uk service."
 }
