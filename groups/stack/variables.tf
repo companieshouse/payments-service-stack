@@ -113,7 +113,7 @@ variable "vault_password" {
 }
 
 # Networking
-variable "payments_admin_lb_internal" {
+variable "admin_lb_internal" {
   type        = bool
   description = "Whether the Payments Admin Web ALB should be internal or public facing"
   default     = true
@@ -126,7 +126,7 @@ variable "payments_admin_lb_internal" {
 # eric
 variable "eric_version" {
   type        = string
-  description = "The version of the eric service/container to run as a reverse proxy in front of pay.admin service."
+  description = "The version of the eric service/container to run as a reverse proxy in front of pay_admin service."
 }
 variable "eric_cache_url" {
   type = string
@@ -166,7 +166,7 @@ variable "eric_default_rate_limit_window" {
 
 # payments.admin.web.ch.gov.uk
 
-variable "pay.admin_release_version" {
+variable "pay_admin_release_version" {
   type        = string
   description = "The release version for the payments.admin.web.ch.gov.uk service."
 }

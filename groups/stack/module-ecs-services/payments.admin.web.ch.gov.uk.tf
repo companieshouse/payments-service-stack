@@ -1,6 +1,6 @@
 locals {
   service_name = "payments.admin.web.ch.gov.uk"
-  pay.admin_proxy_port = 11000 # local port number defined for proxy target of payments service sitting behind eric
+  pay_admin_proxy_port = 11000 # local port number defined for proxy target of payments service sitting behind eric
 }
 
 resource "aws_ecs_service" "payments.admin.web.ch.gov.uk-ecs-service" {
@@ -11,7 +11,7 @@ resource "aws_ecs_service" "payments.admin.web.ch.gov.uk-ecs-service" {
   depends_on      = [var.payments-admin-web-lb-arn]
   load_balancer {
     target_group_arn = aws_lb_target_group.payments.admin.web.ch.gov.uk-target_group.arn
-    container_port   = var.pay.admin_application_port
+    container_port   = var.pay_admin_application_port
     container_name   = "eric" # [ALB -> target group -> eric -> payments admin] so eric container named here
   }
 }
@@ -29,7 +29,7 @@ locals {
       docker_registry            : var.docker_registry
 
       # eric specific configs
-      eric_port                      : var.pay.admin_application_port # eric needs to be the first service in the chain from ALB
+      eric_port                      : var.pay_admin_application_port # eric needs to be the first service in the chain from ALB
       eric_version                   : var.eric_version
       eric_cache_url                 : var.eric_cache_url
       eric_cache_max_connections     : var.eric_cache_max_connections
@@ -41,9 +41,9 @@ locals {
       eric_default_rate_limit        : var.eric_default_rate_limit
       eric_default_rate_limit_window : var.eric_default_rate_limit_window
 
-      # pay.admin specific configs
-      pay.admin_release_version        : var.pay.admin_release_version
-      pay.admin_proxy_port             : local.pay.admin_proxy_port
+      # pay_admin specific configs
+      pay_admin_release_version        : var.pay_admin_release_version
+      pay_admin_proxy_port             : local.pay_admin_proxy_port
     },
       var.secrets_arn_map
   )
@@ -59,7 +59,7 @@ resource "aws_ecs_task_definition" "payments.admin.web.ch.gov.uk-task-definition
 
 resource "aws_lb_target_group" "payments.admin.web.ch.gov.uk-target_group" {
   name     = "${var.environment}-${local.service_name}"
-  port     = var.pay.admin_application_port
+  port     = var.pay_admin_application_port
   protocol = "HTTP"
   vpc_id   = var.vpc_id
   health_check {

@@ -27,7 +27,7 @@ variable "vpc_id" {
   type        = string
   description = "The ID of the VPC for the target group and security group."
 }
-variable "payments_admin_lb_internal" {
+variable "admin_lb_internal" {
   type        = bool
   description = "Whether the payments admin ALB should be internal or public facing"
 }
