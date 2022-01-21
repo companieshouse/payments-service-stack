@@ -125,3 +125,6 @@ variable "pay_admin_application_port" {
   type        = string
   description = "The port number for the payments.admin.web.ch.gov.uk service."
 }
+variable "pay_web_oauth2_redirect_uri" {
+  type = string
+}

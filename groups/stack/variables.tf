@@ -170,4 +170,8 @@ variable "pay_admin_release_version" {
   type        = string
   description = "The release version for the payments.admin.web.ch.gov.uk service."
 }
+variable "pay_web_oauth2_redirect_uri" {
+  type = string
+  description = "The uri to which to redirect after authorisation i.e. the CHS web url plus callback path \"/oauth2/user/callback\""
+}
 
