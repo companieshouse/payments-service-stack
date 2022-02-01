@@ -96,7 +96,7 @@ locals {
 }
 
 module "ecs-cluster" {
-  source = "git::git@github.com:companieshouse/terraform-library-ecs-cluster.git?ref=1.1.1"
+  source = "git::git@github.com:companieshouse/terraform-library-ecs-cluster.git?ref=1.1.3"
 
   stack_name                 = local.stack_name
   name_prefix                = local.name_prefix
@@ -142,8 +142,8 @@ module "ecs-services" {
 
   name_prefix               = local.name_prefix
   environment               = var.environment
-  payments-admin-web-lb-arn          = module.ecs-stack.payments-admin-web-lb-listener-arn
-  payments-admin-web-lb-listener-arn = module.ecs-stack.payments-admin-web-lb-listener-arn
+  admin-web-lb-arn          = module.ecs-stack.admin-web-lb-listener-arn
+  admin-web-lb-listener-arn = module.ecs-stack.admin-web-lb-listener-arn
   vpc_id                    = local.vpc_id
   subnet_ids                = local.application_ids
   web_access_cidrs          = local.app_access_cidrs

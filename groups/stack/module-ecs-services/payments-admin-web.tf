@@ -8,7 +8,7 @@ resource "aws_ecs_service" "payments-admin-web-ecs-service" {
   cluster         = var.ecs_cluster_id
   task_definition = aws_ecs_task_definition.payments-admin-web-task-definition.arn
   desired_count   = 1
-  depends_on      = [var.payments-admin-web-lb-arn]
+  depends_on      = [var.admin-web-lb-arn]
   load_balancer {
     target_group_arn = aws_lb_target_group.payments-admin-web-target_group.arn
     container_port   = var.pay_admin_application_port
@@ -75,7 +75,7 @@ resource "aws_lb_target_group" "payments-admin-web-target_group" {
 }
 
 resource "aws_lb_listener_rule" "payments-admin-web" {
-  listener_arn = var.payments-admin-web-lb-listener-arn
+  listener_arn = var.admin-web-lb-listener-arn
   priority     = 1
   action {
     type             = "forward"
