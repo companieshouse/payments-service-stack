@@ -68,7 +68,7 @@ resource "aws_lb_target_group" "payments-admin-web-target_group" {
     unhealthy_threshold = "2"
     interval            = "30"
     matcher             = "200"
-    path                = "/payments-admin-web/healthcheck"
+    path                = "/admin/payments/healthcheck"
     port                = "traffic-port"
     protocol            = "HTTP"
     timeout             = "5"
@@ -84,6 +84,6 @@ resource "aws_lb_listener_rule" "payments-admin-web" {
   }
   condition {
     field  = "path-pattern"
-    values = ["/payments-admin-web/*"]
+    values = ["/admin/payments/*"]
   }
 }

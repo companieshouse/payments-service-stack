@@ -164,11 +164,11 @@ variable "eric_default_rate_limit_window" {
   default = "5m"
 }
 
-# payments.admin.web.ch.gov.uk
+# payments-admin-web
 
 variable "pay_admin_release_version" {
   type        = string
-  description = "The release version for the payments.admin.web.ch.gov.uk service."
+  description = "The release version for the payments-admin-web service."
 }
 variable "pay_web_oauth2_redirect_uri" {
   type = string

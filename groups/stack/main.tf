@@ -170,7 +170,7 @@ module "ecs-services" {
   eric_default_rate_limit        = var.eric_default_rate_limit
   eric_default_rate_limit_window = var.eric_default_rate_limit_window
 
-  # payments.admin.web.ch.gov.uk variables
+  # payments-admin-web variables
   pay_admin_release_version      = var.pay_admin_release_version
   pay_admin_application_port     = "10000"
   pay_web_oauth2_redirect_uri    = var.pay_web_oauth2_redirect_uri
