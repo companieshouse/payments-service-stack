@@ -174,4 +174,8 @@ variable "pay_web_oauth2_redirect_uri" {
   type = string
   description = "The uri to which to redirect after authorisation i.e. the CHS web url plus callback path \"/oauth2/user/callback\""
 }
+variable "pay_web_cdn_host" {
+  type        = string
+  description = "The host URL for the CDN"
+}
 
