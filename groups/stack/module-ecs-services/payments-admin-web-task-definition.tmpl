@@ -48,7 +48,8 @@
     {
         "environment": [
             { "name": "PORT", "value": "${pay_admin_proxy_port}" },
-            { "name": "LOGLEVEL", "value": "${log_level}" }
+            { "name": "LOGLEVEL", "value": "${log_level}" },
+            { "name": "CDN_HOST", "value": "${cdn_host}" }
         ],
         "name": "${service_name}",
         "image": "${docker_registry}/${service_name}:${pay_admin_release_version}",

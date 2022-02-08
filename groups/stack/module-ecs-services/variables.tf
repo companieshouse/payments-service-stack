@@ -66,6 +66,10 @@ variable "log_level" {
   type        = string
   description = "The log level to be set in the environment variables for the container."
 }
+variable "cdn_host" {
+  type        = string
+  description = "The URL which the cdn is hosted on"
+}
 
 # Certificates
 variable "ssl_certificate_id" {

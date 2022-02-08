@@ -15,6 +15,7 @@ ec2_key_pair_name = "chs-cidev"
 
 # shared configs
 log_level = "TRACE"
+cdn_host = "d3uvya5a8a1ncx.cloudfront.net"
 
 # eric configs
 eric_cache_url = "cidev-chs-elasticache.9vgugg.ng.0001.euw2.cache.amazonaws.com:6379"

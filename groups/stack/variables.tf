@@ -42,6 +42,10 @@ variable "log_level" {
   type        = string
   description = "The log level for services to use: TRACE, DEBUG, INFO or ERROR"
 }
+variable "cdn_host" {
+  type        = string
+  description = "The URL which the cdn is hosted on"
+}
 
 # EC2
 variable "ec2_key_pair_name" {

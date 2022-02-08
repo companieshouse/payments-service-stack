@@ -157,6 +157,7 @@ module "ecs-services" {
   docker_registry           = var.docker_registry
   secrets_arn_map           = module.secrets.secrets_arn_map
   log_level                 = var.log_level
+  cdn_host                  = var.cdn_host
 
   # eric specific configs
   eric_version                   = var.eric_version

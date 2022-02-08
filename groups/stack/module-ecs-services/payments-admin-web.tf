@@ -26,6 +26,7 @@ locals {
       external_top_level_domain  : var.external_top_level_domain
       account_subdomain_prefix   : var.account_subdomain_prefix
       log_level                  : var.log_level
+      cdn_host                   : var.cdn_host
       docker_registry            : var.docker_registry
 
       # eric specific configs
