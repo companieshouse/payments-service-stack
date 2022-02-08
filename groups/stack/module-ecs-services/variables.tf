@@ -125,3 +125,10 @@ variable "pay_admin_application_port" {
   type        = string
   description = "The port number for the payments-admin-web service."
 }
+variable "pay_web_oauth2_redirect_uri" {
+  type = string
+}
+variable "pay_web_cdn_host" {
+  type        = string
+  description = "The host URL for the CDN"
+}

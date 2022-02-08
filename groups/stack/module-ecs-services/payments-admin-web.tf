@@ -42,8 +42,10 @@ locals {
       eric_default_rate_limit_window : var.eric_default_rate_limit_window
 
       # pay_admin specific configs
-      pay_admin_release_version        : var.pay_admin_release_version
-      pay_admin_proxy_port             : local.pay_admin_proxy_port
+      pay_admin_release_version      : var.pay_admin_release_version
+      pay_admin_proxy_port           : local.pay_admin_proxy_port
+      pay_web_oauth2_redirect_uri    : var.pay_web_oauth2_redirect_uri
+      pay_web_cdn_host               : var.pay_web_cdn_host
     },
       var.secrets_arn_map
   )

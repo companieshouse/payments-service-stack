@@ -48,7 +48,10 @@
     {
         "environment": [
             { "name": "PORT", "value": "${pay_admin_proxy_port}" },
-            { "name": "LOGLEVEL", "value": "${log_level}" }
+            { "name": "LOGLEVEL", "value": "${log_level}" },
+            { "name": "OAUTH2_AUTH_URI", "value": "https://${account_subdomain_prefix}${external_top_level_domain}/oauth2/authorise" },
+            { "name": "OAUTH2_REDIRECT_URI", "value": "${pay_web_oauth2_redirect_uri}" },
+            { "name": "CDN_HOST", "value": "${pay_web_cdn_host}" }
         ],
         "name": "${service_name}",
         "image": "${docker_registry}/${service_name}:${pay_admin_release_version}",
@@ -69,7 +72,11 @@
                 "awslogs-stream-prefix": "ecs"
             }
         },
-        "secrets": [],
+        "secrets": [
+            { "name": "OAUTH2_CLIENT_ID", "valueFrom": "${web-oauth2-client-id}" },
+            { "name": "OAUTH2_CLIENT_SECRET", "valueFrom": "${web-oauth2-client-secret}" },
+            { "name": "OAUTH2_REQUEST_KEY", "valueFrom": "${web-oauth2-request-key}" }
+        ],
         "volumesFrom": [],
         "essential": true
     }
