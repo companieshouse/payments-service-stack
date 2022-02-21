@@ -102,6 +102,16 @@ variable "account_subdomain_prefix" {
   default = "account"
 }
 
+# Cookies
+variable "cookie_domain" {
+  type        = string
+  description = "The session cookie domain."
+}
+variable "cookie_name" {
+  type        = string
+  description = "The session cookie name."
+}
+
 # Vault
 variable "vault_username" {
   type        = string

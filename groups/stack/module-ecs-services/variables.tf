@@ -67,6 +67,16 @@ variable "log_level" {
   description = "The log level to be set in the environment variables for the container."
 }
 
+# Cookies
+variable "cookie_domain" {
+  type        = string
+  description = "The session cookie domain."
+}
+variable "cookie_name" {
+  type        = string
+  description = "The cookie name."
+}
+
 # Certificates
 variable "ssl_certificate_id" {
   type        = string

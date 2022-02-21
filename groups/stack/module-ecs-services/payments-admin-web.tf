@@ -27,6 +27,8 @@ locals {
       account_subdomain_prefix   : var.account_subdomain_prefix
       log_level                  : var.log_level
       docker_registry            : var.docker_registry
+      cookie_domain              : var.cookie_domain
+      cookie_name                : var.cookie_name
 
       # eric specific configs
       eric_port                      : var.pay_admin_application_port # eric needs to be the first service in the chain from ALB

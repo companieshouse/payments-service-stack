@@ -157,6 +157,8 @@ module "ecs-services" {
   docker_registry           = var.docker_registry
   secrets_arn_map           = module.secrets.secrets_arn_map
   log_level                 = var.log_level
+  cookie_domain             = var.cookie_domain
+  cookie_name               = var.cookie_name
 
   # eric specific configs
   eric_version                   = var.eric_version
