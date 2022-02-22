@@ -52,8 +52,8 @@
             { "name": "OAUTH2_AUTH_URI", "value": "https://${account_subdomain_prefix}${external_top_level_domain}/oauth2/authorise" },
             { "name": "OAUTH2_REDIRECT_URI", "value": "${pay_web_oauth2_redirect_uri}" },
             { "name": "CDN_HOST", "value": "${pay_web_cdn_host}" },
-            { "name": "COOKIE_DOMAIN", "value": ${cookie_domain}" },
-            { "name": "COOKIE_NAME", "value": ${cookie_name}" }
+            { "name": "COOKIE_DOMAIN", "value": "${cookie_domain}" },
+            { "name": "COOKIE_NAME", "value": "${cookie_name}" }
         ],
         "name": "${service_name}",
         "image": "${docker_registry}/${service_name}:${pay_admin_release_version}",
