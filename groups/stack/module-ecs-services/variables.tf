@@ -158,3 +158,7 @@ variable "pay_web_cache_server" {
   type        = string
   description = "The server name of the cache"
 }
+variable "pay_web_default_session_expiration" {
+  type        = number
+  description = "Default session expiration in seconds"
+}
