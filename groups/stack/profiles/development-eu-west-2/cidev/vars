@@ -26,3 +26,4 @@ eric_cache_url = "cidev-chs-elasticache.9vgugg.ng.0001.euw2.cache.amazonaws.com:
 pay_web_oauth2_redirect_uri = "https://cidev.aws.chdev.org/oauth2/user/callback"
 pay_web_oauth2_token_uri = "https://account.cidev.aws.chdev.org/oauth2/token"
 pay_web_cdn_host = "d3uvya5a8a1ncx.cloudfront.net"
+pay_web_chs_url = "https://cidev.aws.chdev.org"
