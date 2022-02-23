@@ -192,4 +192,8 @@ variable "pay_web_cdn_host" {
   type        = string
   description = "The host URL for the CDN"
 }
+variable "pay_web_chs_url" {
+  type        = string
+  description = "The URL for CHS"
+}
 

@@ -178,4 +178,5 @@ module "ecs-services" {
   pay_web_oauth2_redirect_uri    = var.pay_web_oauth2_redirect_uri
   pay_web_oauth2_token_uri       = var.pay_web_oauth2_token_uri
   pay_web_cdn_host               = var.pay_web_cdn_host
+  pay_web_chs_url                = var.pay_web_chs_url
 }
