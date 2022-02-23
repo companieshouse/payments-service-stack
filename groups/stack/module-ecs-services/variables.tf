@@ -150,3 +150,11 @@ variable "pay_web_chs_url" {
   type        = string
   description = "The URL for CHS"
 }
+variable "pay_web_cache_pool_size" {
+  type        = number
+  description = "The max size of the pool of connections to the cache"
+}
+variable "pay_web_cache_server" {
+  type        = string
+  description = "The server name of the cache"
+}
