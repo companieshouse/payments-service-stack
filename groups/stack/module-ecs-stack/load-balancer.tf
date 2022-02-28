@@ -21,6 +21,22 @@ resource "aws_lb_listener" "admin-web-lb-listener" {
   }
 }
 
+resource "aws_lb_listener" "admin-web-lb-http-listener" {
+  load_balancer_arn = aws_lb.admin-web-lb.arn
+  port              = "80"
+  protocol          = "HTTP"
+
+  default_action {
+    type = "redirect"
+
+    redirect {
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
+  }
+}
+
 resource "aws_route53_record" "admin-web-r53-record" {
   count   = var.zone_id == "" ? 0 : 1 # zone_id defaults to empty string giving count = 0 i.e. not route 53 record
   zone_id = var.zone_id
