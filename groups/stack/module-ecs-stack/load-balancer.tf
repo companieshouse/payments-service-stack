@@ -22,7 +22,7 @@ resource "aws_lb_listener" "admin-web-lb-listener" {
 }
 
 resource "aws_lb_listener" "admin-web-lb-listener" {
-  load_balancer_arn = aws_lb.front_end.arn
+  load_balancer_arn = aws_lb.admin-web-lb.arn
   port              = "80"
   protocol          = "HTTP"
 
