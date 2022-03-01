@@ -196,6 +196,14 @@ variable "pay_web_chs_url" {
   type        = string
   description = "The URL for CHS"
 }
+variable "pay_web_account_url" {
+  type        = string
+  description = "The URL for CHS Account"
+}
+variable "pay_web_monitor_url" {
+  type        = string
+  description = "The URL for CHS Follow"
+}
 variable "pay_web_cache_pool_size" {
   type        = number
   description = "The max size of the pool of connections to the cache"
