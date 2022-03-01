@@ -179,6 +179,8 @@ module "ecs-services" {
   pay_web_oauth2_token_uri           = var.pay_web_oauth2_token_uri
   pay_web_cdn_host                   = var.pay_web_cdn_host
   pay_web_chs_url                    = var.pay_web_chs_url
+  pay_web_account_url                = var.pay_web_account_url
+  pay_web_monitor_url                = var.pay_web_monitor_url
   pay_web_cache_pool_size            = var.pay_web_cache_pool_size
   pay_web_cache_server               = var.pay_web_cache_server
   pay_web_default_session_expiration = var.pay_web_default_session_expiration
