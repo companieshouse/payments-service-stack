@@ -23,6 +23,7 @@ log_level = "TRACE"
 eric_cache_url = "cidev-chs-elasticache.9vgugg.ng.0001.euw2.cache.amazonaws.com:6379"
 
 # shared payments admin web configs (for payments admin web and in future regular public payments web)
+pay_api_url = "https://api-payments.cidev.aws.chdev.org"
 pay_web_oauth2_redirect_uri = "https://cidev.aws.chdev.org/oauth2/user/callback"
 pay_web_oauth2_token_uri = "https://account.cidev.aws.chdev.org/oauth2/token"
 pay_web_cdn_host = "d3uvya5a8a1ncx.cloudfront.net"
