@@ -135,6 +135,10 @@ variable "pay_admin_application_port" {
   type        = string
   description = "The port number for the payments-admin-web service."
 }
+variable "pay_api_url" {
+  type        = string
+  description = "The URL for the Payments API service."
+}
 variable "pay_web_oauth2_redirect_uri" {
   type = string
 }

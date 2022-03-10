@@ -175,6 +175,7 @@ module "ecs-services" {
   # payments-admin-web variables
   pay_admin_release_version          = var.pay_admin_release_version
   pay_admin_application_port         = "10000"
+  pay_api_url                        = var.pay_api_url
   pay_web_oauth2_redirect_uri        = var.pay_web_oauth2_redirect_uri
   pay_web_oauth2_token_uri           = var.pay_web_oauth2_token_uri
   pay_web_cdn_host                   = var.pay_web_cdn_host
