@@ -172,6 +172,10 @@ module "ecs-services" {
   eric_default_rate_limit        = var.eric_default_rate_limit
   eric_default_rate_limit_window = var.eric_default_rate_limit_window
 
+  # api configs
+  internal_api_url                   = var.internal_api_url
+  api_url                            = var.api_url
+
   # payments-admin-web variables
   pay_admin_release_version          = var.pay_admin_release_version
   pay_admin_application_port         = "10000"
