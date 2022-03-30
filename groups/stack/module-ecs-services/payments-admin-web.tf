@@ -43,6 +43,10 @@ locals {
       eric_default_rate_limit        : var.eric_default_rate_limit
       eric_default_rate_limit_window : var.eric_default_rate_limit_window
 
+      # api configs      
+      internal_api_url                   : var.internal_api_url
+      api_url                            : var.api_url
+
       # pay_admin specific configs
       pay_admin_release_version          : var.pay_admin_release_version
       pay_admin_proxy_port               : local.pay_admin_proxy_port

@@ -220,4 +220,12 @@ variable "pay_web_default_session_expiration" {
   type        = number
   description = "Default session expiration in seconds"
 }
+variable "internal_api_url" {
+  type        = string
+  description = "The internal URL for the Companies House API service."
+}
+variable "api_url" {
+  type        = string
+  description = "The URL for the Companies House API service."
+}
 
