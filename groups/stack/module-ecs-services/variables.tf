@@ -52,6 +52,10 @@ variable "ecs_cluster_id" {
   type        = string
   description = "The ARN of the ECS cluster to deploy the service to."
 }
+variable "host_names" {
+  type        = list(string)
+  default     = ["/admin/payments/*", "/"]
+}
 
 # Docker Container
 variable "docker_registry" {
