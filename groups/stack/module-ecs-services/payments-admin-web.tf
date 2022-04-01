@@ -97,4 +97,8 @@ resource "aws_lb_listener_rule" "payments-admin-web" {
     type             = "forward"
     target_group_arn = aws_lb_target_group.payments-admin-web-target_group.arn
   }
+  condition {
+    field  = "path-pattern"
+    values = ["*"]
+  }
 }
