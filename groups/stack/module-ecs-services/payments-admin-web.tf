@@ -99,6 +99,6 @@ resource "aws_lb_listener_rule" "payments-admin-web" {
   }
   condition {
     field  = "path-pattern"
-    values = ["/admin/payments/*"]
+    values = ["/admin/payments/*", "/"]
   }
 }
