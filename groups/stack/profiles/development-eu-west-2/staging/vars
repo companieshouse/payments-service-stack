@@ -5,13 +5,13 @@ deploy_to = "staging"
 state_prefix = "env:/staging"
 aws_profile = "staging-eu-west-2"
 
-cookie_domain = "companieshouse.gov.uk"
+cookie_domain = "company-information.service.gov.uk"
 cookie_name = "__SID"
 
 # Certificate for https access through ALB
 ssl_certificate_id = "arn:aws:acm:eu-west-2:250991044064:certificate/56b76dab-5728-4f83-a16d-e3dd59cd82c8"
-external_top_level_domain = "-staging-aws.companieshouse.gov.uk"
-internal_top_level_domain = "-internal-api-staging-aws.companieshouse.gov.uk"
+external_top_level_domain = "-staging-aws.company-information.service.gov.uk"
+internal_top_level_domain = ".staging.aws.internal"
 
 ec2_key_pair_name = "chs-aws-staging"
 
@@ -22,17 +22,17 @@ log_level = "TRACE"
 eric_cache_url = "staging-chs-elasticache-001.3psdof.0001.euw2.cache.amazonaws.com:6379"
 
 # api configs
-internal_api_url = "https://internal-api-staging-aws.companieshouse.gov.uk"
-api_url = "https://api-staging-aws.companieshouse.gov.uk"
+internal_api_url = "https://internal-api-staging-aws.company-information.service.gov.uk"
+api_url = "https://api-staging-aws.company-information.service.gov.uk"
 
 # shared payments admin web configs (for payments admin web and in future regular public payments web)
-pay_api_url = "api-payments-staging-aws.companieshouse.gov.uk"
-pay_web_oauth2_redirect_uri = "https://staging-aws.companieshouse.gov.uk/oauth2/user/callback"
-pay_web_oauth2_token_uri = "https://account-staging-aws.companieshouse.gov.uk/oauth2/token"
-pay_web_cdn_host = "d309scb72axzzb.cloudfront.net"
-pay_web_chs_url = "https://staging-aws.companieshouse.gov.uk"
-pay_web_account_url = "https://account-staging-aws.companieshouse.gov.uk"
-pay_web_monitor_url = "https://follow-staging-aws.companieshouse.gov.uk"
+pay_api_url = "api-payments-staging-aws.company-information.service.gov.uk"
+pay_web_oauth2_redirect_uri = "https://staging-aws.company-information.service.gov.uk/oauth2/user/callback"
+pay_web_oauth2_token_uri = "https://account-staging-aws.company-information.service.gov.uk/oauth2/token"
+pay_web_cdn_host = "d3s4qnqz7t874x.cloudfront.net"
+pay_web_chs_url = "https://staging-aws.company-information.service.gov.uk"
+pay_web_account_url = "https://account-staging-aws.company-information.service.gov.uk"
+pay_web_monitor_url = "https://follow-staging-aws.company-information.service.gov.uk"
 pay_web_cache_pool_size = 8
 pay_web_cache_server = "staging-chs-elasticache-001.3psdof.0001.euw2.cache.amazonaws.com:6379"
 pay_web_default_session_expiration = 3600
