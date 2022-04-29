@@ -25,6 +25,9 @@ eric_cache_url = "staging-chs-elasticache.3psdof.ng.0001.euw2.cache.amazonaws.co
 internal_api_url = "https://internal-api-staging.company-information.service.gov.uk"
 api_url = "https://api-staging.company-information.service.gov.uk"
 
+# accounts prefix
+account_subdomain_prefix = "identity"
+
 # shared payments admin web configs (for payments admin web and in future regular public payments web)
 pay_api_url = "https://api-payments-staging.company-information.service.gov.uk"
 pay_web_oauth2_redirect_uri = "https://staging.company-information.service.gov.uk/oauth2/user/callback"
