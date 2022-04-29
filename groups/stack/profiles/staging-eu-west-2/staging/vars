@@ -10,7 +10,7 @@ cookie_name = "__SID"
 
 # Certificate for https access through ALB
 ssl_certificate_id = "arn:aws:acm:eu-west-2:250991044064:certificate/56b76dab-5728-4f83-a16d-e3dd59cd82c8"
-external_top_level_domain = "-staging-aws.company-information.service.gov.uk"
+external_top_level_domain = "-staging.company-information.service.gov.uk"
 internal_top_level_domain = ".staging.aws.internal"
 
 ec2_key_pair_name = "ch-aws-staging"
