@@ -10,7 +10,7 @@ cookie_name = "__SID"
 
 # Certificate for https access through ALB
 ssl_certificate_id = "arn:aws:acm:eu-west-2:250991044064:certificate/56b76dab-5728-4f83-a16d-e3dd59cd82c8"
-external_top_level_domain = "-staging-aws.company-information.service.gov.uk"
+external_top_level_domain = "-staging.company-information.service.gov.uk"
 internal_top_level_domain = ".staging.aws.internal"
 
 ec2_key_pair_name = "ch-aws-staging"
@@ -24,6 +24,9 @@ eric_cache_url = "staging-chs-elasticache.3psdof.ng.0001.euw2.cache.amazonaws.co
 # api configs
 internal_api_url = "https://internal-api-staging.company-information.service.gov.uk"
 api_url = "https://api-staging.company-information.service.gov.uk"
+
+# accounts prefix
+account_subdomain_prefix = "identity"
 
 # shared payments admin web configs (for payments admin web and in future regular public payments web)
 pay_api_url = "https://api-payments-staging.company-information.service.gov.uk"
