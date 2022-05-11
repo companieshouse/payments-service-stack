@@ -1,6 +1,6 @@
 aws_bucket = "live-eu-west-2.terraform-state.ch.gov.uk"
 remote_state_bucket = "ch-service-live-terraform-state"
-environment = "livesbox"
+environment = "live"
 deploy_to = "live"
 state_prefix = "env:/live"
 aws_profile = "live-eu-west-2"
@@ -11,9 +11,9 @@ cookie_name = "__SID"
 # Certificate for https access through ALB
 ssl_certificate_id = "arn:aws:iam::449229032822:server-certificate/Live_2022"
 external_top_level_domain = "-find-and-update.company-information.service.gov.uk"
-internal_top_level_domain = "-livesbox.live.aws.internal"
+internal_top_level_domain = ".live.aws.internal"
 
-ec2_key_pair_name = "ch-aws-livesbox"
+ec2_key_pair_name = "ch-aws-live"
 
 # shared configs
 log_level = "TRACE"
