@@ -1,4 +1,4 @@
-aws_bucket = "staging-eu-west-2.terraform-state.ch.gov.uk"
+aws_bucket = "live-eu-west-2.terraform-state.ch.gov.uk"
 remote_state_bucket = "ch-service-live-terraform-state"
 environment = "livesbox"
 deploy_to = "live"
