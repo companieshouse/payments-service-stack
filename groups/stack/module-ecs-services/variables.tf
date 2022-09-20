@@ -182,3 +182,7 @@ variable "api_url" {
   type        = string
   description = "The URL for the Companies House API service."
 }
+variable "refund_upload_timeout" {
+  type        = string
+  description = "The timeout in seconds allowed for refund uploads."
+}
