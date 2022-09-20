@@ -37,3 +37,4 @@ pay_web_monitor_url = "https://follow.cidev.aws.chdev.org"
 pay_web_cache_pool_size = 8
 pay_web_cache_server = "cidev-chs-elasticache.9vgugg.ng.0001.euw2.cache.amazonaws.com:6379"
 pay_web_default_session_expiration = 3600
+refund_upload_timeout = 300

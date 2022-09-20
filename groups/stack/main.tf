@@ -189,4 +189,5 @@ module "ecs-services" {
   pay_web_cache_pool_size            = var.pay_web_cache_pool_size
   pay_web_cache_server               = var.pay_web_cache_server
   pay_web_default_session_expiration = var.pay_web_default_session_expiration
+  refund_upload_timeout              = var.refund_upload_timeout
 }
