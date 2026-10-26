@@ -10,10 +10,8 @@ locals {
   vpc_name                     = local.stack_secrets["vpc_name"]
   notify_topic_slack_endpoints = local.stack_secrets["notify_topic_slack_endpoint"]
 
-  default_tags = merge(module.owner_tags.tags, module.iac_tags.tags, {
-    StackName          = local.stack_name
-    Environment        = var.environment
-    ManagedByTerraform = "true"
-  }
-)
+  default_tags = merge(
+    module.owner_tags.tags,
+    module.iac_tags.tags
+  )
 }

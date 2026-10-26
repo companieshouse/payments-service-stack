@@ -36,9 +36,7 @@ module "ecs_cluster" {
   scaleup_schedule             = var.asg_scaleup_schedule
   notify_topic_slack_endpoints = local.notify_topic_slack_endpoints
 
-  default_tags = merge(local.default_tags, {
-    StackName = local.stack_name
-  })
+  default_tags = local.default_tags
 }
 
 moved {
