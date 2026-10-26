@@ -18,7 +18,7 @@ terraform {
 }
 
 module "ecs_cluster" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/ecs/ecs-cluster?ref=1.0.444"
+  source = "git@github.com:companieshouse/terraform-modules//aws/ecs/ecs-cluster?ref=1.0.445"
 
   stack_name                   = local.stack_name
   name_prefix                  = local.name_prefix
@@ -47,13 +47,13 @@ moved {
 }
 
 module "owner_tags" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/tagging/owner?ref=tags/1.0.444"
+  source = "git@github.com:companieshouse/terraform-modules//aws/tagging/owner?ref=tags/1.0.445"
 
   platform_owner = "Platform"
 }
 
 module "iac_tags" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/tagging/iac?ref=tags/1.0.444"
+  source = "git@github.com:companieshouse/terraform-modules//aws/tagging/iac?ref=tags/1.0.445"
 
   source_code_url = "https://github.com/companieshouse/payments-service-stack"
   group           = "infrastructure"

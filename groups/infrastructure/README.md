@@ -18,9 +18,9 @@
 
 | Name | Source | Version |
 | ---- | ------ | ------- |
-| <a name="module_ecs_cluster"></a> [ecs\_cluster](#module\_ecs\_cluster) | git@github.com:companieshouse/terraform-modules//aws/ecs/ecs-cluster | 1.0.444 |
-| <a name="module_iac_tags"></a> [iac\_tags](#module\_iac\_tags) | git@github.com:companieshouse/terraform-modules//aws/tagging/iac | tags/1.0.444 |
-| <a name="module_owner_tags"></a> [owner\_tags](#module\_owner\_tags) | git@github.com:companieshouse/terraform-modules//aws/tagging/owner | tags/1.0.444 |
+| <a name="module_ecs_cluster"></a> [ecs\_cluster](#module\_ecs\_cluster) | git@github.com:companieshouse/terraform-modules//aws/ecs/ecs-cluster | 1.0.445 |
+| <a name="module_iac_tags"></a> [iac\_tags](#module\_iac\_tags) | git@github.com:companieshouse/terraform-modules//aws/tagging/iac | tags/1.0.445 |
+| <a name="module_owner_tags"></a> [owner\_tags](#module\_owner\_tags) | git@github.com:companieshouse/terraform-modules//aws/tagging/owner | tags/1.0.445 |
 
 ## Resources
 
