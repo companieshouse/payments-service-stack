@@ -58,11 +58,6 @@ variable "asg_scaleup_schedule" {
   description = "The schedule to use when scaling up the number of EC2 instances to their normal desired level."
 }
 
-variable "enable_asg_autoscaling" {
-  default     = true
-  type        = bool
-  description = "Whether to enable auto-scaling of the ASG by creating a capacity provider for the ECS cluster."
-}
 # Networking
 variable "internal_albs" {
   type        = bool
